@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace FinalProjectResumeMaker
+namespace FinalProjectWPFResumeBuilder
 {
     /// <summary>
     /// Interaction logic for LoadPage.xaml
@@ -22,11 +22,6 @@ namespace FinalProjectResumeMaker
         public LoadPage()
         {
             InitializeComponent();
-        }
-
-        private void AllPeopleDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
         }
     }
 }

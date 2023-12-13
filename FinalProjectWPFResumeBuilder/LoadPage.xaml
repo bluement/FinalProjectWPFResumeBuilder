@@ -6,7 +6,25 @@
         xmlns:local="clr-namespace:FinalProjectWPFResumeBuilder"
         mc:Ignorable="d"
         Title="LoadPage" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <Window.Resources>
+        <Style TargetType="DataGrid">
+            <Setter Property="Height" Value="200"/>
+            <Setter Property="Width" Value="575"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="AutoGenerateColumns" Value="True"/>
+            <Setter Property="SelectionMode" Value="Single"/>
+        </Style>
+    </Window.Resources>
+    <DockPanel>
+        <Label DockPanel.Dock="Top" Content="Load Page" />
+        <StackPanel DockPanel.Dock="Bottom" Orientation="Horizontal" HorizontalAlignment="Center" >
+            <Button x:Name="GoBack" Click="GoBack_Click" Content="Go Back"/>
+
+        </StackPanel>
+
+        <DataGrid x:Name="CategoryDataGrid" SelectionChanged="CategoryDataGrid_SelectionChanged"/>
+
+
+    </DockPanel>
 </Window>
