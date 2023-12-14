@@ -13,16 +13,27 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
+
 namespace FinalProjectWPFResumeBuilder
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void ResumeInformationButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Welcome to the resume builder. Click on 'New Resume' to create a new template resume.");
+        }
+
+        private void NewResumeButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Navigate to NewResumePage.xaml
+            NewResumePage newResumePageWindow = new NewResumePage();
+            newResumePageWindow.Show();
         }
     }
 }
