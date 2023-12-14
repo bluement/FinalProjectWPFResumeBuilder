@@ -25,7 +25,7 @@ namespace FinalProjectWPFResumeBuilder
         public NewResumePage()
         {
             InitializeComponent();
-            this.category = category;
+            
         }
         private void AddData_Click(object sender, RoutedEventArgs e)
         {
