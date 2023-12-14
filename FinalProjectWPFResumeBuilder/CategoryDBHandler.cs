@@ -25,14 +25,20 @@ namespace FinalProjectResumeMaker
                 FirstName = "Jude ",
                 LastName = "Bellingham",
                 City = "Madrid",
-                Age = 20
+                Age = 20,
+                Address = "45 almond road",
+                Phone = "3647891029",
+                Email = "Jude@Email"
             };
             Category newp2 = new Category
             {
                 FirstName = "Cristiano",
                 LastName = "Ronaldo",
                 City = "Lisbon",
-                Age = 38
+                Age = 38,
+                Address = "467 buyers road",
+                Phone = "3642334061",
+                Email = "Christiano@Email"
             };
 
 
@@ -41,7 +47,10 @@ namespace FinalProjectResumeMaker
                 FirstName = "Masonount",
                 LastName = "MountMason",
                 City = "Manchester",
-                Age = 24
+                Age = 24,
+                Address = "129 wooden road",
+                Phone = "9728401295",
+                Email = "Masonount@Email"
             };
 
 
@@ -75,7 +84,7 @@ namespace FinalProjectResumeMaker
 
                 string table = "Create table CATEGORIES (ID integer primary key," +
                     "FirstName text, " +
-                    "LastName text, City text, Age integer, Address text, Phone integer, Email text);";
+                    "LastName text, City text, Age integer, Address text, Phone text, Email text);";
 
 
                 SQLiteCommand command2 = new SQLiteCommand(table, con);
@@ -148,16 +157,13 @@ namespace FinalProjectResumeMaker
                         category.LastName = reader["LastName"].ToString();
                         category.City = reader["City"].ToString();
                         category.Address = reader["Address"].ToString();
+                        category.Phone = reader["Phone"].ToString();
                         category.Email = reader["Email"].ToString();
 
 
                         if (Int32.TryParse(reader["Age"].ToString(), out int age))
                         {
                             category.Age = age;
-                        }
-                        if (Int32.TryParse(reader["Phone"].ToString(), out int phone))
-                        {
-                            category.Phone = phone;
                         }
                     }
                 }
@@ -241,16 +247,13 @@ namespace FinalProjectResumeMaker
                         category.LastName = reader["LastName"].ToString();
                         category.City = reader["City"].ToString();
                         category.Address = reader["Address"].ToString();
+                        category.Phone = reader["Phone"].ToString();
                         category.Email = reader["Email"].ToString();
 
 
                         if (Int32.TryParse(reader["Age"].ToString(), out int age))
                         {
                             category.Age = age;
-                        }
-                        if (Int32.TryParse(reader["Phone"].ToString(), out int phone))
-                        {
-                            category.Phone = phone;
                         }
                         listCategories.Add(category);
 
