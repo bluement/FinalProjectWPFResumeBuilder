@@ -10,6 +10,15 @@
         <Style TargetType="Button">
             <Setter Property="Margin" Value="3" />
         </Style>
+
+        <Style TargetType="DataGrid">
+            <Setter Property="Height" Value="200"/>
+            <Setter Property="Width" Value="575"/>
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+            <Setter Property="AutoGenerateColumns" Value="True"/>
+            <Setter Property="SelectionMode" Value="Single"/>
+        </Style>
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -35,34 +44,24 @@
 
 
         <TextBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3">Resume Title</TextBox>
+        <TextBox Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3">Enter name and all</TextBox>
+        <DataGrid x:Name="AllPeopleDataGrid" SelectionChanged="AllPeopleDataGrid_SelectionChanged" Grid.ColumnSpan="3" Margin="3,5,0,0" Grid.RowSpan="3" Grid.Row="2" Height="243" Width="787"/>
 
-        <StackPanel Grid.Row="2" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="2">
-            <DataGrid x:Name="CategoriesDataGrid" SelectionChanged="CategoriesDataGrid_SelectionChnaged" />
-        </StackPanel>
-        
-        <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Vertical">
-            <Button Content="Add" Click="AddData_Click"/>
-            <Button Content="Edit" Click="EditData_Click"/>
-            <Button Content="Delete" Click="DeleteData_Click"/>
-        </StackPanel>
 
-        
-        <StackPanel Grid.Row="3" Grid.Column="2" Orientation="Vertical">
-            <Button Content="Add" Click="AddData_Click"/>
-            <Button Content="Edit" Click="EditData_Click"/>
-            <Button Content="Delete" Click="DeleteData_Click"/>
+
+        <StackPanel Grid.Column="1" Margin="266,47,0,5" RenderTransformOrigin="0.514,0.531" Grid.ColumnSpan="2" Grid.RowSpan="2">
+            <DataGrid x:Name="CategoriesDataGrid" SelectionChanged="CategoriesDataGrid_SelectionChnaged" Height="95" Width="267" />
         </StackPanel>
 
 
-        <StackPanel Grid.Row="4" Grid.Column="2" Orientation="Vertical">
-            <Button Content="Add" Click="AddData_Click"/>
-            <Button Content="Edit" Click="EditData_Click"/>
-            <Button Content="Delete" Click="DeleteData_Click"/>
-        </StackPanel>
 
-        <Button Content="Add New Category" Grid.Row="5" Grid.Column="0" Click="AddNewCategory_Click"/>
 
-        <Button Content="Save Resume" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="5" Click="SaveResume_Click" />
+
+
+
+        <Button Content="Add New Category" Grid.Row="5" Grid.Column="0" Click="AddNewCategory_Click" Grid.ColumnSpan="3" Margin="3,3,10,3"/>
+
+      
     </Grid>
 </Window>
 
