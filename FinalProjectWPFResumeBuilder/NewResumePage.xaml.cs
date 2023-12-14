@@ -21,6 +21,7 @@ namespace FinalProjectWPFResumeBuilder
     /// </summary>
     public partial class NewResumePage : Window
     {
+        CategoryDBHandler db = CategoryDBHandler.Instance;
         List <Category> category;
         
         public NewResumePage()
