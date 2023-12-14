@@ -36,40 +36,33 @@
 
         <TextBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3">Resume Title</TextBox>
 
-
-        <TextBlock Text="Work Experience" FontWeight="Bold" Grid.Row="2" Grid.Column="0"/>
-        <ListView Name="lvWorkExperience" Grid.Row="2" Grid.Column="1">
-
-        </ListView>
+        <StackPanel Grid.Row="2" Grid.RowSpan="3" Grid.Column="0" Grid.ColumnSpan="2">
+            <DataGrid x:Name="CategoriesDataGrid" SelectionChanged="CategoriesDataGrid_SelectionChnaged" />
+        </StackPanel>
+        
         <StackPanel Grid.Row="2" Grid.Column="2" Orientation="Vertical">
-            <Button Content="Add" Click="AddWorkExperience_Click"/>
-            <Button Content="Edit" Click="EditWorkExperience_Click"/>
-            <Button Content="Delete" Click="DeleteWorkExperience_Click"/>
+            <Button Content="Add" Click="AddData_Click"/>
+            <Button Content="Edit" Click="EditData_Click"/>
+            <Button Content="Delete" Click="DeleteData_Click"/>
         </StackPanel>
 
-
-        <TextBlock Text="Education" FontWeight="Bold" Grid.Row="3" Grid.Column="0"/>
-        <ListView Name="lvEducation" Grid.Row="3" Grid.Column="1">
-
-        </ListView>
+        
         <StackPanel Grid.Row="3" Grid.Column="2" Orientation="Vertical">
-            <Button Content="Add" Click="AddEducation_Click"/>
-            <Button Content="Edit" Click="EditEducation_Click"/>
-            <Button Content="Delete" Click="DeleteEducation_Click"/>
+            <Button Content="Add" Click="AddData_Click"/>
+            <Button Content="Edit" Click="EditData_Click"/>
+            <Button Content="Delete" Click="DeleteData_Click"/>
         </StackPanel>
 
 
-        <TextBlock Text="Contact Information" FontWeight="Bold" Grid.Row="4" Grid.Column="0"/>
-        <ListView Name="lvContactInfo" Grid.Row="4" Grid.Column="1">
-
-        </ListView>
         <StackPanel Grid.Row="4" Grid.Column="2" Orientation="Vertical">
-            <Button Content="Add" Click="AddContactInfo_Click"/>
-            <Button Content="Edit" Click="EditContactInfo_Click"/>
-            <Button Content="Delete" Click="DeleteContactInfo_Click"/>
+            <Button Content="Add" Click="AddData_Click"/>
+            <Button Content="Edit" Click="EditData_Click"/>
+            <Button Content="Delete" Click="DeleteData_Click"/>
         </StackPanel>
 
-        <Button Content="Add New Category" Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" Click="AddNewCategory_Click"/>
+        <Button Content="Add New Category" Grid.Row="5" Grid.Column="0" Click="AddNewCategory_Click"/>
+
+        <Button Content="Save Resume" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="5" Click="SaveResume_Click" />
     </Grid>
 </Window>
 
