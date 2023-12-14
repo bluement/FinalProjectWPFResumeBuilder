@@ -33,6 +33,7 @@ namespace FinalProjectWPFResumeBuilder
         {
             // Create and show the NewResumePage window
             NewResumePage newResumePageWindow = new NewResumePage();
+            this.Visibility = Visibility.Collapsed;
             newResumePageWindow.Show();
         }
     }
