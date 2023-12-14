@@ -59,7 +59,10 @@ namespace FinalProjectResumeMaker
                 FirstName = "Vinicius ",
                 LastName = "Junior",
                 City = "Madrid",
-                Age = 22
+                Age = 22,
+                Address = "782 rocked road",
+                Phone = "3649716740",
+                Email = "Vinicius@Email"
             };
 
             AddCategory(newp1);

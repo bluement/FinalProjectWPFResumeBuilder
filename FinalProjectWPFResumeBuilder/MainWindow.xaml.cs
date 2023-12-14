@@ -24,5 +24,26 @@ namespace FinalProjectWPFResumeBuilder
         {
             InitializeComponent();
         }
+
+        private void ResumeInformationButton_Click(object sender, RoutedEventArgs e)
+        {
+            string message = "You can load or create your resume. You can also convert it to pdf.";
+            string title = "Resume Builder Information";
+            MessageBox.Show(message, title);
+        }
+
+        private void LoadResumeButton_Click(object sender, RoutedEventArgs e)
+        {
+            LoadPage loadPage = new LoadPage();
+            this.Visibility = Visibility.Hidden;
+            loadPage.Show();
+        }
+
+        private void NewResumeButton_Click(object sender, RoutedEventArgs e)
+        {
+            NewResumePage newPage = new NewResumePage();
+            this.Visibility = Visibility.Hidden;
+            newPage.Show();
+        }
     }
 }
