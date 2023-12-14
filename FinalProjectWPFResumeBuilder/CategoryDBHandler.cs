@@ -13,7 +13,7 @@ namespace FinalProjectResumeMaker
     {
         static readonly string conString = ConfigurationManager.ConnectionStrings["CategoryDataBase"].ConnectionString;
         static readonly CategoryDBHandler instance = new CategoryDBHandler();
-
+        //testing
 
 
         private CategoryDBHandler()
