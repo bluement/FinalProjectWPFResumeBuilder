@@ -53,7 +53,7 @@ namespace FinalProjectWPFResumeBuilder
 
             foreach (Category c in category)
             {
-                text += String.Format("\n{0} {1} {2} {3}", c.FirstName, c.LastName, c.City, c.Age);
+                text += String.Format("\n{0} {1} {2} {3}", c.FirstName, c.LastName, c.City, c.Age, c.Address, c.Phone, c.Email);
             }
 
             rect = new XRect(10, 220, page.Width - 20, 220);
