@@ -40,7 +40,7 @@
 
         <Button Content="Edit" Grid.Row="0" Grid.Column="0" />
         <Button Content="Add New Category" Grid.Row="0" Grid.Column="1" />
-        <Button Content="Export to PDF" Grid.Row="0" Grid.Column="2"/>
+        <Button Content="Export to PDF" Grid.Row="0" Grid.Column="2" Click="ExportToPDFButton_Click"/>
 
 
         <TextBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3">Resume Title</TextBox>

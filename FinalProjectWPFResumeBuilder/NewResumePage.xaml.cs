@@ -21,7 +21,8 @@ namespace FinalProjectWPFResumeBuilder
     /// </summary>
     public partial class NewResumePage : Window
     {
-        Category category;
+        List <Category> category;
+        
         public NewResumePage()
         {
             InitializeComponent();
@@ -37,7 +38,10 @@ namespace FinalProjectWPFResumeBuilder
         }
         private void DeleteData_Click(System.Object sender, RoutedEventArgs e)
         {
-
+        }
+        private void ExportToPDFButton_Click(object sender, RoutedEventArgs e)
+        {
+            ExportToPDF.exportToPDF(category);
         }
     }
 }
