@@ -39,12 +39,12 @@
 
 
         <Button Content="Edit" Grid.Row="0" Grid.Column="0" />
-        <Button Content="View" Grid.Row="0" Grid.Column="1" />
+        <Button Content="Add New Category" Grid.Row="0" Grid.Column="1" />
         <Button Content="Export to PDF" Grid.Row="0" Grid.Column="2"/>
 
 
         <TextBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3">Resume Title</TextBox>
-        <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3">Enter name and all</TextBlock>
+        <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3">Enter name and all related information</TextBlock>
    
 
 
@@ -59,7 +59,7 @@
 
 
 
-        <Button Content="Add New Category" Grid.Row="5" Grid.Column="0"  Grid.ColumnSpan="3" Margin="3,3,10,3"/>
+        
 
       
     </Grid>
