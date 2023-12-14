@@ -13,7 +13,7 @@ namespace FinalProjectResumeMaker
     {
         static readonly string conString = ConfigurationManager.ConnectionStrings["CategoryDataBase"].ConnectionString;
         static readonly CategoryDBHandler instance = new CategoryDBHandler();
-
+        //testing
 
 
         private CategoryDBHandler()
@@ -69,13 +69,13 @@ namespace FinalProjectResumeMaker
             using (SQLiteConnection con = new SQLiteConnection(conString))
             {
                 con.Open();
-                string drop = "drop table if exists PERSONS;";
+                string drop = "drop table if exists CATEGORIES;";
                 SQLiteCommand command1 = new SQLiteCommand(drop, con);
                 command1.ExecuteNonQuery();
 
-                string table = "Create table PERSONS (ID integer primary key," +
+                string table = "Create table CATEGORIES (ID integer primary key," +
                     "FirstName text, " +
-                    "LastName text, City text, Age integer);";
+                    "LastName text, City text, Age integer, Address text, Phone integer, Email text);";
 
 
                 SQLiteCommand command2 = new SQLiteCommand(table, con);
@@ -94,8 +94,8 @@ namespace FinalProjectResumeMaker
             {
                 con.Open();
                 //create a parameterized query
-                string query = "INSERT INTO PERSONS (FirstName, LastName, City, Age) VALUES(@FirstName, " +
-                                "@LastName, @City, @Age)";
+                string query = "INSERT INTO CATEGORIES (FirstName, LastName, City, Age, Address, Phone, Email) VALUES(@FirstName, " +
+                                "@LastName, @City, @Age, @Address, @Phone, @Email)";
 
                 SQLiteCommand insertcom = new SQLiteCommand(query, con);
 
@@ -104,6 +104,9 @@ namespace FinalProjectResumeMaker
                 insertcom.Parameters.AddWithValue("@LastName", category.LastName);
                 insertcom.Parameters.AddWithValue("@City", category.City);
                 insertcom.Parameters.AddWithValue("@Age", category.Age);
+                insertcom.Parameters.AddWithValue("@Address", category.Address);
+                insertcom.Parameters.AddWithValue("@Phone", category.Phone);
+                insertcom.Parameters.AddWithValue("@Email", category.Email);
 
                 try
                 {
@@ -129,7 +132,7 @@ namespace FinalProjectResumeMaker
             using (SQLiteConnection con = new SQLiteConnection(conString))
             {
                 con.Open();
-                SQLiteCommand getcom = new SQLiteCommand("Select * from Persons " +
+                SQLiteCommand getcom = new SQLiteCommand("Select * from Categories " +
                     "WHERE Id= @Id", con);
                 getcom.Parameters.AddWithValue("@Id", id);
 
@@ -144,12 +147,17 @@ namespace FinalProjectResumeMaker
                         category.FirstName = reader["FirstName"].ToString();
                         category.LastName = reader["LastName"].ToString();
                         category.City = reader["City"].ToString();
-
+                        category.Address = reader["Address"].ToString();
+                        category.Email = reader["Email"].ToString();
 
 
                         if (Int32.TryParse(reader["Age"].ToString(), out int age))
                         {
                             category.Age = age;
+                        }
+                        if (Int32.TryParse(reader["Phone"].ToString(), out int phone))
+                        {
+                            category.Phone = phone;
                         }
                     }
                 }
@@ -165,7 +173,7 @@ namespace FinalProjectResumeMaker
             {
 
                 con.Open();
-                string query = "UPDATE PERSONS SET FirstName= @FirstName, LastName= @LastName," +
+                string query = "UPDATE CATEGORIES SET FirstName= @FirstName, LastName= @LastName," +
                     "City = @City, Age= @Age WHERE Id= @Id";
 
                 SQLiteCommand updatecom = new SQLiteCommand(query, con);
@@ -174,6 +182,9 @@ namespace FinalProjectResumeMaker
                 updatecom.Parameters.AddWithValue("@LastName", category.LastName);
                 updatecom.Parameters.AddWithValue("@City", category.City);
                 updatecom.Parameters.AddWithValue("@Age", category.Age);
+                updatecom.Parameters.AddWithValue("@Address", category.Address);
+                updatecom.Parameters.AddWithValue("@Phone", category.Phone);
+                updatecom.Parameters.AddWithValue("@Email", category.Email);
 
                 try
                 {
@@ -193,7 +204,7 @@ namespace FinalProjectResumeMaker
             using (SQLiteConnection con = new SQLiteConnection(conString))
             {
                 con.Open();
-                string query = "DELETE FROM PERSONS WHERE id= @Id";
+                string query = "DELETE FROM CATEGORIES WHERE id= @Id";
                 SQLiteCommand deletecom = new SQLiteCommand(query, con);
                 deletecom.Parameters.AddWithValue("@Id", category.Id);
                 try
@@ -215,7 +226,7 @@ namespace FinalProjectResumeMaker
             using (SQLiteConnection con = new SQLiteConnection(conString))
             {
                 con.Open();
-                SQLiteCommand com = new SQLiteCommand("Select * from PERSONS", con);
+                SQLiteCommand com = new SQLiteCommand("Select * from CATEGORIES", con);
                 using (SQLiteDataReader reader = com.ExecuteReader())
                 {
                     while (reader.Read())
@@ -229,12 +240,17 @@ namespace FinalProjectResumeMaker
                         category.FirstName = reader["FirstName"].ToString();
                         category.LastName = reader["LastName"].ToString();
                         category.City = reader["City"].ToString();
-
+                        category.Address = reader["Address"].ToString();
+                        category.Email = reader["Email"].ToString();
 
 
                         if (Int32.TryParse(reader["Age"].ToString(), out int age))
                         {
                             category.Age = age;
+                        }
+                        if (Int32.TryParse(reader["Phone"].ToString(), out int phone))
+                        {
+                            category.Phone = phone;
                         }
                         listCategories.Add(category);
 
