@@ -85,6 +85,7 @@
     <Compile Include="NewResumePage.xaml.cs">
       <DependentUpon>NewResumePage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ProfileDBHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
