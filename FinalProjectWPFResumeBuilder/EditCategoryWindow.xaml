@@ -5,10 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FinalProjectWPFResumeBuilder"
         mc:Ignorable="d"
-        Title="EditCategoryWindow" Height="450" Width="800">
+        Title="EditCategoryWindow" Height="300" Width="400">
+    <Window.Resources>
+        <Style TargetType="StackPanel">
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
     <Grid>
         <StackPanel>
-            <Label Content="Category details Window"/>
+            <Label Content="Category details Window" FontWeight="Bold" HorizontalAlignment="Center"/>
             <StackPanel Orientation="Horizontal">
                 <Label Content="Category Name:"/>
                 <TextBox x:Name="CategoryNameTextBox" Width="100"/>
