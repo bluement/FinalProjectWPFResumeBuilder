@@ -6,6 +6,22 @@
         xmlns:local="clr-namespace:FinalProjectWPFResumeBuilder"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#ADD8E6"/>
+            <!-- Light Blue Color -->
+            <Setter Property="Foreground" Value="Black"/>
+            <!-- Text Color -->
+            <Setter Property="Height" Value="68"/>
+            <Setter Property="Width" Value="222"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="0,136,0,0"/>
+            <Setter Property="VerticalAlignment" Value="Top"/>
+        </Style>
+        <Style TargetType="Grid">
+            <Setter Property="Background" Value="Black"/>
+        </Style>
+    </Window.Resources>
     <Grid>
         <Label Content="Resume Builder" HorizontalAlignment="Center" Margin="0,27,0,0" VerticalAlignment="Top" Height="50" Width="178" />
         <Button Content="Resume Builder Information" Click="ResumeInformationButton_Click" HorizontalAlignment="Center" Height="68" Margin="0,136,0,0" VerticalAlignment="Top" Width="222"/>
