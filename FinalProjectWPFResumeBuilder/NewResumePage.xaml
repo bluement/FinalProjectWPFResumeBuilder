@@ -32,6 +32,14 @@
             <Setter Property="Background" Value="Black"/>
             <Setter Property="Foreground" Value="White"/>
         </Style>
+        <Style TargetType="DataGridCell">
+            <Setter Property="Background" Value="Black"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style TargetType="DataGridColumnHeader">
+            <Setter Property="Background" Value="Black"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
