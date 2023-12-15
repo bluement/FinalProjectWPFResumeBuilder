@@ -38,8 +38,8 @@
         </Grid.ColumnDefinitions>
 
 
-        <Button Content="Edit" Grid.Row="0" Grid.Column="0" />
-        <Button Content="Add New Category" Grid.Row="0" Grid.Column="1" Click="AddNewCategory_Click"/>
+        
+        <Button Content="Add New Category" Grid.Row="0" Grid.Column="0" Click="AddNewCategory_Click"/>
         <Button x:Name="ExportToPDFButton" Content="Export to pdf" Grid.Row="0" Grid.Column="2" Click="ExportToPDFButton_Click"/>
 
 
