@@ -92,7 +92,7 @@ namespace FinalProjectResumeMaker
             {
                 con.Open();
                 //create a parameterized query
-                string query = "INSERT INTO CATEGORIES (CategoryName, CategoryDescription, Location, YOA) VALUES(@CategoryName, " +
+                string query = "INSERT INTO CategoryDataBase (CategoryName, CategoryDescription, Location, YOA) VALUES(@CategoryName, " +
                                 "@CategoryDescription, @Location, @YOA)";
 
                 SQLiteCommand insertcom = new SQLiteCommand(query, con);
@@ -127,7 +127,7 @@ namespace FinalProjectResumeMaker
             using (SQLiteConnection con = new SQLiteConnection(conString))
             {
                 con.Open();
-                SQLiteCommand getcom = new SQLiteCommand("Select * from Categories " +
+                SQLiteCommand getcom = new SQLiteCommand("Select * from CategoryDataBase " +
                     "WHERE Id= @Id", con);
                 getcom.Parameters.AddWithValue("@Id", id);
 
@@ -186,7 +186,7 @@ namespace FinalProjectResumeMaker
             using (SQLiteConnection con = new SQLiteConnection(conString))
             {
                 con.Open();
-                string query = "DELETE FROM CATEGORIES WHERE id= @Id";
+                string query = "DELETE FROM CategoryDataBase WHERE id= @Id";
                 SQLiteCommand deletecom = new SQLiteCommand(query, con);
                 deletecom.Parameters.AddWithValue("@Id", category.Id);
                 try

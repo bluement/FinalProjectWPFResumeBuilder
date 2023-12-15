@@ -51,10 +51,6 @@
                 <Button x:Name="DeleteButton" Content="Delete" Click="DeleteButton_Click"/>
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal">
-                
-            </StackPanel>
-
         </StackPanel>
     </Grid>
 </Window>
