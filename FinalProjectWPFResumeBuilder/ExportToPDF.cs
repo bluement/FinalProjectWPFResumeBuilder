@@ -16,6 +16,7 @@ namespace FinalProjectWPFResumeBuilder
 {
     public static class ExportToPDF
     {
+
         public static void exportToPDF(List<Category> category)
         {
             // Create a PDF document
