@@ -9,6 +9,8 @@
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Margin" Value="3" />
+            <Setter Property="Background" Value="#ADD8E6"/>
+            <Setter Property="Foreground" Value="Black"/>
         </Style>
 
         <Style TargetType="DataGrid">
@@ -18,6 +20,25 @@
             <Setter Property="VerticalAlignment" Value="Top"/>
             <Setter Property="AutoGenerateColumns" Value="True"/>
             <Setter Property="SelectionMode" Value="Single"/>
+            <Setter Property="Background" Value="Black"/>
+            <Setter Property="Foreground" Value="Black"/>
+        </Style>
+        
+        <Style TargetType="Grid">
+            <Setter Property="Background" Value="Black"/>
+        </Style>
+
+        <Style TargetType="TextBox">
+            <Setter Property="Background" Value="Black"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style TargetType="DataGridCell">
+            <Setter Property="Background" Value="Black"/>
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
+        <Style TargetType="DataGridColumnHeader">
+            <Setter Property="Background" Value="Black"/>
+            <Setter Property="Foreground" Value="White"/>
         </Style>
     </Window.Resources>
     <Grid>
@@ -43,7 +64,7 @@
         <Button x:Name="ExportToPDFButton" Content="Export to pdf" Grid.Row="0" Grid.Column="2" Click="ExportToPDFButton_Click"/>
 
 
-        <TextBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3">Resume Title</TextBox>
+        <TextBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">Resume Title</TextBox>
         <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3">Enter name and all related information</TextBlock>
 
         <StackPanel Grid.Column="1" Margin="266,47,0,5" RenderTransformOrigin="0.514,0.531" Grid.ColumnSpan="2" Grid.RowSpan="2">
