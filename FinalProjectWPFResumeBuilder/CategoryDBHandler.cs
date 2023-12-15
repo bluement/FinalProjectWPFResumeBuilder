@@ -71,7 +71,7 @@ namespace FinalProjectResumeMaker
                 con.Open();
                 var command1 = new SQLiteCommand(con);
                 command1.CommandText = @"
-                CREATE TABLE IF NOT EXISTS  CategoryDataBase(
+                CREATE TABLE IF NOT EXISTS CategoryDataBase(
                 Id INTEGER PRIMARY KEY AUTOINCREMENT,
                 CateoryName TEXT,
                 CategoryDescription TEXT,

@@ -47,5 +47,11 @@ namespace FinalProjectWPFResumeBuilder
             Close();
 
         }
+        private void DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            CategoryDBHandler delete = CategoryDBHandler.Instance;
+            delete.DeleteCategory(category2);
+            Close();
+        }
     }
 }
