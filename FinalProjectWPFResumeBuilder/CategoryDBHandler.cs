@@ -80,9 +80,6 @@ namespace FinalProjectResumeMaker
 
                 SQLiteCommand command2 = new SQLiteCommand(table, con);
                 command2.ExecuteNonQuery();
-
-
-
             }
         }
 
