@@ -25,7 +25,14 @@ namespace FinalProjectWPFResumeBuilder
         public NewResumePage()
         {
             InitializeComponent();
-            
+            RefrestAllCategoriesList();
+
+        }
+        public void RefrestAllCategoriesList()
+        {
+            AllCategoriesDataGrid.ItemsSource = null;
+            category = db.ReadAllCategory();
+            AllCategoriesDataGrid.ItemsSource = category;
         }
         private void AddData_Click(object sender, RoutedEventArgs e)
         {
@@ -49,7 +56,7 @@ namespace FinalProjectWPFResumeBuilder
             {
                 CategoryDetailsWindow categoryDetailsWindow = new CategoryDetailsWindow(category);
                 categoryDetailsWindow.ShowDialog();
-                RefrestAllCategoryList();
+                RefrestAllCategoriesList();
             }
 
         }
