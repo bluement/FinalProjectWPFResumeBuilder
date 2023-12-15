@@ -92,6 +92,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="CategoryDetailsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="EditCategoryWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -109,6 +113,9 @@
     </Compile>
     <Compile Include="Category.cs" />
     <Compile Include="CategoryDBHandler.cs" />
+    <Compile Include="CategoryDetailsWindow.xaml.cs">
+      <DependentUpon>CategoryDetailsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="EditCategoryWindow.xaml.cs">
       <DependentUpon>EditCategoryWindow.xaml</DependentUpon>
     </Compile>

@@ -181,7 +181,7 @@ namespace FinalProjectResumeMaker
             return row;
         }
 
-        public int DeletePerson(Category category)
+        public int DeleteCategory(Category category)
         {
             int row = 0;
             using (SQLiteConnection con = new SQLiteConnection(conString))
