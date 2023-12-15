@@ -45,7 +45,8 @@ namespace FinalProjectWPFResumeBuilder
         }
         private void ExportToPDFButton_Click(object sender, RoutedEventArgs e)
         {
-            ExportToPDF.exportToPDF(category);
+            string topContent = informationTB.Text; // Assuming informationTB is a TextBox
+            ExportToPDF.exportToPDF(topContent, category);
         }
         private void LoadCategories()
         {

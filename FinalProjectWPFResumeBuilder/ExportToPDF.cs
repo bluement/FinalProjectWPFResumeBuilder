@@ -17,7 +17,7 @@ namespace FinalProjectWPFResumeBuilder
     public static class ExportToPDF
     {
 
-        public static void exportToPDF(List<Category> category)
+        public static void exportToPDF(string topContent, List<Category> category)
         {
             // Create a PDF document
             PdfDocument document = new PdfDocument();
@@ -46,8 +46,9 @@ namespace FinalProjectWPFResumeBuilder
             // Title
             rect = new XRect(0, 10, page.Width - 20, 55);
             tf.Alignment = XParagraphAlignment.Center;
-            string Title = "Resume:";
-            tf.DrawString(Title, fontTitle, XBrushes.Red, rect);
+            string Title = "Resume:" ;
+           
+            tf.DrawString(topContent, fontTitle, XBrushes.Red, rect);
 
             // Add people
             string text = "";
