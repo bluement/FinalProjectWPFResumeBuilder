@@ -20,9 +20,12 @@ namespace FinalProjectWPFResumeBuilder
     /// </summary>
     public partial class AddCategoryWindow : Window
     {
+     
         public AddCategoryWindow()
         {
+            
             InitializeComponent();
+            
         }
         private void SubmitButton_Click(object sender, RoutedEventArgs e)
         {
