@@ -20,6 +20,7 @@
         <Style TargetType="Button">
             <Setter Property="Background" Value="Blue"/>
             <Setter Property="Foreground" Value="White" />
+            <Setter Property="Margin" Value="10" />
         </Style>
     </Window.Resources>
     <Grid>
@@ -47,6 +48,11 @@
 
             <StackPanel Orientation="Horizontal">
                 <Button x:Name="SubmitButton" Content="Save" Click="SubmitButton_Click"/>
+                <Button x:Name="DeleteButton" Content="Delete" Click="DeleteButton_Click"/>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal">
+                
             </StackPanel>
 
         </StackPanel>
