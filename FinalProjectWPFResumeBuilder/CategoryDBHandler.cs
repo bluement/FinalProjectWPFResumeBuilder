@@ -70,16 +70,18 @@ namespace FinalProjectResumeMaker
             {
                 con.Open();
                 string drop = "drop table if exists CATEGORIES;";
-                SQLiteCommand command1 = new SQLiteCommand(drop, con);
+                var command1 = new SQLiteCommand(con);
+                command1.CommandText = @"
+                CREATE TABLE IF NOT EXISTS  CategoryDataBase(
+                Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                CateoryName VARCHAR(255),
+                CategoryDescription VARCHAR(255),
+                Location VARCHAR(255),
+                YOA VARCHAR(255)
+                )";
                 command1.ExecuteNonQuery();
 
-                string table = "Create table CATEGORIES (ID integer primary key," +
-                    "CategoryName text, " +
-                    "CategoryDescription text, Location text, YOA text);";
-
-
-                SQLiteCommand command2 = new SQLiteCommand(table, con);
-                command2.ExecuteNonQuery();
+                
             }
         }
 
