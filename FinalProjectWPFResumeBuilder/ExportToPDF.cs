@@ -46,7 +46,7 @@ namespace FinalProjectWPFResumeBuilder
             // Title
             rect = new XRect(0, 10, page.Width - 20, 55);
             tf.Alignment = XParagraphAlignment.Center;
-            string Title = "These are my peeps";
+            string Title = "Resume:";
             tf.DrawString(Title, fontTitle, XBrushes.Red, rect);
 
             // Add people
