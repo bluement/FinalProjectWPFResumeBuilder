@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinalProjectResumeMaker;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,9 +20,32 @@ namespace FinalProjectWPFResumeBuilder
     /// </summary>
     public partial class EditCategoryWindow : Window
     {
-        public EditCategoryWindow()
+       Category category2;
+        public EditCategoryWindow(Category category)
         {
+            this.category2 = category;
             InitializeComponent();
+            CategoryNameTextBox.Text = category.CategoryName;
+            CategoryDescriptionTextBox.Text = category.CategoryDescription;
+            LocationTextBox.Text = category.Location;
+            YOATextBox.Text = category.YOA.ToString();
+
+
+
+        }
+
+        private void SubmitButton_Click(object sender, RoutedEventArgs e)
+        {
+
+            category2.CategoryName = CategoryNameTextBox.Text;
+            category2.CategoryDescription = CategoryDescriptionTextBox.Text;
+            category2.Location = LocationTextBox.Text;
+            category2.YOA = YOATextBox.Text;
+
+            CategoryDBHandler db = CategoryDBHandler.Instance;
+            db.UpdateCategory(category2);
+            Close();
+
         }
     }
 }
