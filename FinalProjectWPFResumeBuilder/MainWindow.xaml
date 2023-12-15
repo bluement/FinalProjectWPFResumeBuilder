@@ -9,9 +9,7 @@
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Background" Value="#ADD8E6"/>
-            <!-- Light Blue Color -->
             <Setter Property="Foreground" Value="Black"/>
-            <!-- Text Color -->
             <Setter Property="Height" Value="68"/>
             <Setter Property="Width" Value="222"/>
             <Setter Property="HorizontalAlignment" Value="Center"/>

@@ -8,16 +8,25 @@
         Title="NewResumePage" Height="450" Width="800">
     <Window.Resources>
         <Style TargetType="Button">
-            <Setter Property="Margin" Value="3" />
-        </Style>
+                <Setter Property="Margin" Value="3" />
+                <Setter Property="Background" Value="#ADD8E6"/>
+                <!-- Light Blue Color -->
+                <Setter Property="Foreground" Value="Black"/>
+                <!-- Text Color -->
+            </Style>
 
-        <Style TargetType="DataGrid">
-            <Setter Property="Height" Value="200"/>
-            <Setter Property="Width" Value="575"/>
-            <Setter Property="HorizontalAlignment" Value="Left"/>
-            <Setter Property="VerticalAlignment" Value="Top"/>
-            <Setter Property="AutoGenerateColumns" Value="True"/>
-            <Setter Property="SelectionMode" Value="Single"/>
+            <Style TargetType="DataGrid">
+                <Setter Property="Height" Value="200"/>
+                <Setter Property="Width" Value="575"/>
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+                <Setter Property="VerticalAlignment" Value="Top"/>
+                <Setter Property="AutoGenerateColumns" Value="True"/>
+                <Setter Property="SelectionMode" Value="Single"/>
+                
+                
+        </Style>
+        <Style TargetType="Grid">
+            <Setter Property="Background" Value="Black"/>
         </Style>
     </Window.Resources>
     <Grid>
