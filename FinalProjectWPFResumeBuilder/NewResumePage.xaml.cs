@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -26,7 +27,7 @@ namespace FinalProjectWPFResumeBuilder
         public NewResumePage()
         {
             InitializeComponent();
-            
+            LoadCategories();
             RefrestAllCategoriesList();
 
         }
@@ -46,14 +47,35 @@ namespace FinalProjectWPFResumeBuilder
         {
             ExportToPDF.exportToPDF(category);
         }
+        private void LoadCategories()
+        {
+            var allCategories = db.ReadAllCategory();
+            AllCategoriesDataGrid.ItemsSource = allCategories.ToList();
+            /*try
+            {
+                var allCategories = db.ReadAllCategory();
+                if (allCategories == null || !allCategories.Any())
+                {
+                    Debug.WriteLine("No categories found or ReadAllCategory returned null.");
+                    return;
+                }
+
+                AllCategoriesDataGrid.ItemsSource = allCategories.ToList();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error loading categories: {ex.Message}");
+            }*/
+        }
         private void AllCategoriesDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Category category = (Category)AllCategoriesDataGrid.SelectedItem;
-            if (category != null)
+            if (AllCategoriesDataGrid.SelectedItem is Category selectedCategory)
             {
-                CategoryDetailsWindow categoryDetailsWindow = new CategoryDetailsWindow(category);
-                categoryDetailsWindow.ShowDialog();
-                RefrestAllCategoriesList();
+                var editWindow = new EditCategoryWindow(selectedCategory);
+                if(editWindow.ShowDialog() == true)
+                {
+                    LoadCategories();
+                }
             }
 
         }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace FinalProjectResumeMaker
 {
-    class CategoryDBHandler
+    public class CategoryDBHandler
     {
         static readonly string conString = ConfigurationManager.ConnectionStrings["MyDB"].ConnectionString;
         static readonly CategoryDBHandler instance = new CategoryDBHandler();
@@ -66,18 +66,17 @@ namespace FinalProjectResumeMaker
 
         public void CreateTable()
         {
-            using (SQLiteConnection con = new SQLiteConnection(conString))
+            using (var con = new SQLiteConnection(conString))
             {
                 con.Open();
-                string drop = "drop table if exists CATEGORIES;";
                 var command1 = new SQLiteCommand(con);
                 command1.CommandText = @"
                 CREATE TABLE IF NOT EXISTS  CategoryDataBase(
                 Id INTEGER PRIMARY KEY AUTOINCREMENT,
-                CateoryName VARCHAR(255),
-                CategoryDescription VARCHAR(255),
-                Location VARCHAR(255),
-                YOA VARCHAR(255)
+                CateoryName TEXT,
+                CategoryDescription TEXT,
+                Location TEXT,
+                YOA TEXT
                 )";
                 command1.ExecuteNonQuery();
 
@@ -94,7 +93,7 @@ namespace FinalProjectResumeMaker
                 con.Open();
                 //create a parameterized query
                 string query = "INSERT INTO CATEGORIES (CategoryName, CategoryDescription, Location, YOA) VALUES(@CategoryName, " +
-                                "@CategoryDescritpion, @Location, @YOA)";
+                                "@CategoryDescription, @Location, @YOA)";
 
                 SQLiteCommand insertcom = new SQLiteCommand(query, con);
 

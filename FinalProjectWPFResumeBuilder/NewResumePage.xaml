@@ -50,7 +50,7 @@
             <TextBox x:Name="informationTB">ENTER NAME, PHONE NUMBER, E-MAIL AND PHONE HERE</TextBox>
         </StackPanel>
 
-        <DataGrid x:Name="AllCategoriesDataGrid" SelectionChanged="AllCategoriesDataGrid_SelectionChanged" Grid.ColumnSpan="3" Margin="0,5,0,0" Grid.RowSpan="3" Grid.Row="2" Height="269" Width="790"/>
+        <DataGrid x:Name="AllCategoriesDataGrid" SelectionChanged="AllCategoriesDataGrid_SelectionChanged" Grid.ColumnSpan="3" Margin="0,5,0,0" Grid.RowSpan="3" Grid.Row="2" Height="auto" Width="790" AutoGenerateColumns="True"/>
 
 
     </Grid>
