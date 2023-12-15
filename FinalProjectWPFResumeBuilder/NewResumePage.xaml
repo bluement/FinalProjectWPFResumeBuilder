@@ -45,23 +45,24 @@
 
         <TextBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3">Resume Title</TextBox>
         <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3">Enter name and all related information</TextBlock>
-   
+
 
 
 
         <StackPanel Grid.Column="1" Margin="266,47,0,5" RenderTransformOrigin="0.514,0.531" Grid.ColumnSpan="2" Grid.RowSpan="2">
-            <TextBox x:Name="informationTB"> ENTER NAME, PHONE NUMBER, E-MAIL AND PHONE HERE</TextBox>
+            <TextBox x:Name="informationTB">ENTER NAME, PHONE NUMBER, E-MAIL AND PHONE HERE</TextBox>
         </StackPanel>
 
+        <DataGrid x:Name="AllCategoriesDataGrid" SelectionChanged="AllCategoriesDataGrid_SelectionChanged" Grid.ColumnSpan="3" Margin="0,5,0,0" Grid.RowSpan="3" Grid.Row="2" Height="269" Width="790"/>
 
 
 
 
 
 
-        
 
-      
+
+
     </Grid>
 </Window>
 

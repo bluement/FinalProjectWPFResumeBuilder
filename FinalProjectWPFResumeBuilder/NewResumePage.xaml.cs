@@ -44,5 +44,16 @@ namespace FinalProjectWPFResumeBuilder
         {
             ExportToPDF.exportToPDF(category);
         }
+        private void AllCategoriesDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Category category = (Category)AllCategoriesDataGrid.SelectedItem;
+            if (category != null)
+            {
+                CategoryDetailsWindow categoryDetailsWindow = new CategoryDetailsWindow(category);
+                categoryDetailsWindow.ShowDialog();
+                RefrestAllCategoryList();
+            }
+
+        }
     }
 }
