@@ -139,7 +139,8 @@ namespace FinalProjectResumeMaker
                             category.Id = id2;
                         }
                         category.CategoryName = reader["CategoryName"].ToString();
-                        category.CategoryDescription = reader["CategoryDescritpion"].ToString();
+                        // Fix the typo in the next line from "CategoryDescritpion" to "CategoryDescription"
+                        category.CategoryDescription = reader["CategoryDescription"].ToString();
                         category.Location = reader["Location"].ToString();
                         category.YOA = reader["YOA"].ToString();
                     }
@@ -149,20 +150,19 @@ namespace FinalProjectResumeMaker
         }
 
         public int UpdateCategory(Category category)
-
         {
             int row = 0;
             using (SQLiteConnection con = new SQLiteConnection(conString))
             {
-
                 con.Open();
                 string query = "UPDATE CATEGORIES SET CategoryName= @CategoryName, Location= @Location," +
-                    "YOA = @YOA";
+                    "YOA = @YOA WHERE Id = @Id";
 
                 SQLiteCommand updatecom = new SQLiteCommand(query, con);
                 updatecom.Parameters.AddWithValue("@Id", category.Id);
                 updatecom.Parameters.AddWithValue("@CategoryName", category.CategoryName);
-                updatecom.Parameters.AddWithValue("@CategoryDescritpion", category.CategoryDescription);
+                // Fix the typo in the next line from "CategoryDescritpion" to "CategoryDescription"
+                updatecom.Parameters.AddWithValue("@CategoryDescription", category.CategoryDescription);
                 updatecom.Parameters.AddWithValue("@Location", category.Location);
                 updatecom.Parameters.AddWithValue("@YOA", category.YOA);
 
@@ -177,6 +177,7 @@ namespace FinalProjectResumeMaker
             }
             return row;
         }
+
 
         public int DeleteCategory(Category category)
         {
