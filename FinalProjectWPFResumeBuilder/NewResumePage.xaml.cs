@@ -16,9 +16,7 @@ using FinalProjectResumeMaker;
 
 namespace FinalProjectWPFResumeBuilder
 {
-    /// <summary>
-    /// Interaction logic for NewResumePage.xaml
-    /// </summary>
+   
     public partial class NewResumePage : Window
     {
         CategoryDBHandler db = CategoryDBHandler.Instance;
