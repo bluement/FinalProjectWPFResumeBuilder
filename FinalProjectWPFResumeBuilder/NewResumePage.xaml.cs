@@ -42,7 +42,7 @@ namespace FinalProjectWPFResumeBuilder
         }
         private void ExportToPDFButton_Click(object sender, RoutedEventArgs e)
         {
-            ExportToPDF.ExportToPDF(category);
+            ExportToPDF.exportToPDF(category);
         }
     }
 }
