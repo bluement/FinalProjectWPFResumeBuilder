@@ -22,9 +22,11 @@ namespace FinalProjectWPFResumeBuilder
         CategoryDBHandler db = CategoryDBHandler.Instance;
         List <Category> category;
         
+        
         public NewResumePage()
         {
             InitializeComponent();
+            
             RefrestAllCategoriesList();
 
         }
@@ -34,16 +36,11 @@ namespace FinalProjectWPFResumeBuilder
             category = db.ReadAllCategory();
             AllCategoriesDataGrid.ItemsSource = category;
         }
-        private void AddData_Click(object sender, RoutedEventArgs e)
+        private void AddNewCategory_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-        private void EditData_Click(Object sender, RoutedEventArgs e)
-        {
-
-        }
-        private void DeleteData_Click(System.Object sender, RoutedEventArgs e)
-        {
+            AddCategoryWindow addCategoryWindow = new AddCategoryWindow();
+            addCategoryWindow.ShowDialog();
+            RefrestAllCategoriesList();
         }
         private void ExportToPDFButton_Click(object sender, RoutedEventArgs e)
         {
