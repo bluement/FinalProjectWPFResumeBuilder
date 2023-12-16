@@ -34,7 +34,7 @@ namespace FinalProjectWPFResumeBuilder
 
         }
 
-        private void SubmitButton_Click(object sender, RoutedEventArgs e)
+        private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
 
             category2.CategoryName = CategoryNameTextBox.Text;

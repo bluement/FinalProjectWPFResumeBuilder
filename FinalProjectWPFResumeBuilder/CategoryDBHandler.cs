@@ -68,7 +68,7 @@ namespace FinalProjectResumeMaker
         {
             using (var con = new SQLiteConnection(conString))
             {
-                con.Open();
+                /*con.Open();
                 var command1 = new SQLiteCommand(con);
                 command1.CommandText = @"
                 CREATE TABLE IF NOT EXISTS CategoryDataBase(
@@ -79,8 +79,21 @@ namespace FinalProjectResumeMaker
                 YOA TEXT
                 )";
                 command1.ExecuteNonQuery();
+                */
 
-                
+                con.Open();
+                string drop = "drop table if exists CategoryDataBase;";
+                SQLiteCommand command1 = new SQLiteCommand(drop, con);
+                command1.ExecuteNonQuery();
+
+                string table = "Create table CategoryDataBase (ID integer primary key," +
+                    "CategoryName text, " +
+                    "CategoryDescription text," +
+                    "Location text, " +
+                    "YOA text);";
+                SQLiteCommand command2 = new SQLiteCommand(table, con);
+                command2.ExecuteNonQuery();
+
             }
         }
 
@@ -156,7 +169,7 @@ namespace FinalProjectResumeMaker
             using (SQLiteConnection con = new SQLiteConnection(conString))
             {
                 con.Open();
-                string query = "UPDATE CATEGORIES SET CategoryName= @CategoryName, Location= @Location," +
+                string query = "UPDATE CategoryDataBase SET CategoryName= @CategoryName, Location= @Location," +
                     "YOA = @YOA WHERE Id = @Id";
 
                 SQLiteCommand updatecom = new SQLiteCommand(query, con);
@@ -208,7 +221,7 @@ namespace FinalProjectResumeMaker
             using (SQLiteConnection con = new SQLiteConnection(conString))
             {
                 con.Open();
-                SQLiteCommand com = new SQLiteCommand("Select * from CATEGORIES", con);
+                SQLiteCommand com = new SQLiteCommand("Select * from CategoryDataBase", con);
                 using (SQLiteDataReader reader = com.ExecuteReader())
                 {
                     while (reader.Read())

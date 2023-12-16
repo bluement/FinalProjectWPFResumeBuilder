@@ -47,7 +47,7 @@
             </StackPanel>
 
             <StackPanel Orientation="Horizontal">
-                <Button x:Name="SubmitButton" Content="Save" Click="SubmitButton_Click"/>
+                <Button x:Name="SubmitButton" Content="Save" Click="SaveButton_Click"/>
                 <Button x:Name="DeleteButton" Content="Delete" Click="DeleteButton_Click"/>
             </StackPanel>
 

@@ -46,7 +46,6 @@ namespace FinalProjectWPFResumeBuilder
             // Title
             rect = new XRect(0, 10, page.Width - 20, 55);
             tf.Alignment = XParagraphAlignment.Center;
-            string Title = "Resume:" ;
            
             tf.DrawString(topContent, fontTitle, XBrushes.Red, rect);
 
@@ -55,7 +54,7 @@ namespace FinalProjectWPFResumeBuilder
 
             foreach (Category c in category)
             {
-                text += String.Format("\n{0} {1} {2} {3}", c.CategoryName, c.CategoryDescription, c.Location, c.YOA);
+                text += String.Format("\n{0}: {1}, {2}, {3}", c.CategoryName, c.CategoryDescription, c.Location, c.YOA);
             }
 
             rect = new XRect(10, 220, page.Width - 20, 220);

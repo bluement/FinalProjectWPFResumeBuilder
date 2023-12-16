@@ -43,6 +43,10 @@ namespace FinalProjectWPFResumeBuilder
             addCategoryWindow.ShowDialog();
             RefrestAllCategoriesList();
         }
+        private void RefreshPage_Click(object sender, RoutedEventArgs e)
+        {
+            RefrestAllCategoriesList();
+        }
         private void ExportToPDFButton_Click(object sender, RoutedEventArgs e)
         {
             string topContent = informationTB.Text; // Assuming informationTB is a TextBox
@@ -52,21 +56,6 @@ namespace FinalProjectWPFResumeBuilder
         {
             var allCategories = db.ReadAllCategory();
             AllCategoriesDataGrid.ItemsSource = allCategories.ToList();
-            /*try
-            {
-                var allCategories = db.ReadAllCategory();
-                if (allCategories == null || !allCategories.Any())
-                {
-                    Debug.WriteLine("No categories found or ReadAllCategory returned null.");
-                    return;
-                }
-
-                AllCategoriesDataGrid.ItemsSource = allCategories.ToList();
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine($"Error loading categories: {ex.Message}");
-            }*/
         }
         private void AllCategoriesDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
