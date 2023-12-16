@@ -22,11 +22,14 @@ namespace FinalProjectWPFResumeBuilder
     {
         CategoryDBHandler db = CategoryDBHandler.Instance;
         List <Category> category;
-        
-        
+
+        public string CurrentDateTime { get; private set; }
         public NewResumePage()
         {
             InitializeComponent();
+            DateTimeLabel.Content = "Last modified on: " + DateTime.Now.ToString("g");
+            CurrentDateTime = "Created on: " + DateTime.Now.ToString("g");
+            DataContext = this;
             LoadCategories();
             RefrestAllCategoriesList();
 

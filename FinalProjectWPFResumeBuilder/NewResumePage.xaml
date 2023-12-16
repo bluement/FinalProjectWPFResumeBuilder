@@ -40,6 +40,9 @@
             <Setter Property="Background" Value="Black"/>
             <Setter Property="Foreground" Value="White"/>
         </Style>
+        <Style TargetType="Label">
+            <Setter Property="Foreground" Value="White"/>
+        </Style>
     </Window.Resources>
     <Grid>
         <Grid.RowDefinitions>
@@ -64,9 +67,11 @@
         <Button x:Name="RefreshPage" Content="Refresh Page" Grid.Row="0" Grid.Column="1" Click="RefreshPage_Click" />
         <Button x:Name="ExportToPDFButton" Content="Export to pdf" Grid.Row="0" Grid.Column="2" Click="ExportToPDFButton_Click"/>
 
-
-        <TextBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">Resume Title</TextBox>
-        <TextBlock Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3">Enter name and all related information</TextBlock>
+        <StackPanel Grid.Row="1" Grid.Column="0">
+            <TextBox >Resume Title</TextBox>
+            <Label Content="{Binding CurrentDateTime}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+            <Label x:Name="DateTimeLabel" HorizontalAlignment="Center" VerticalAlignment="Top" Content="Last modified on:"/>
+        </StackPanel>
 
         <StackPanel Grid.Column="1" Margin="266,47,0,5" RenderTransformOrigin="0.514,0.531" Grid.ColumnSpan="2" Grid.RowSpan="2">
             <TextBox x:Name="informationTB">ENTER NAME, PHONE NUMBER, E-MAIL AND PHONE HERE</TextBox>

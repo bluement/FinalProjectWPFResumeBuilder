@@ -45,6 +45,7 @@ namespace FinalProjectWPFResumeBuilder
             CategoryDBHandler db = CategoryDBHandler.Instance;
             db.UpdateCategory(category2);
             Close();
+            UpdateDateTimeLabel();
 
         }
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
@@ -52,6 +53,14 @@ namespace FinalProjectWPFResumeBuilder
             CategoryDBHandler delete = CategoryDBHandler.Instance;
             delete.DeleteCategory(category2);
             Close();
+            UpdateDateTimeLabel();
+        }
+        private void UpdateDateTimeLabel()
+        {
+            if (Application.Current.MainWindow is NewResumePage newResumePageWindow)
+            {
+                newResumePageWindow.DateTimeLabel.Content = "Last modified on: " + DateTime.Now.ToString("g");
+            }
         }
     }
 }

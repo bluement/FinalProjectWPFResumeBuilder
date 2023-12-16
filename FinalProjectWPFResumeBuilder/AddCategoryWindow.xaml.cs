@@ -38,6 +38,14 @@ namespace FinalProjectWPFResumeBuilder
             CategoryDBHandler db = CategoryDBHandler.Instance;
             db.AddCategory(newCategory);
             Close();
+            UpdateDateTimeLabel();
+        }
+        private void UpdateDateTimeLabel()
+        {
+            if (Application.Current.MainWindow is NewResumePage newResumePageWindow)
+            {
+                newResumePageWindow.DateTimeLabel.Content = "Last modified on: " + DateTime.Now.ToString("g");
+            }
         }
     }
 }
